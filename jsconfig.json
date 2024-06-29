@@ -1,8 +1,18 @@
 {
   "compilerOptions": {
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
 }
+
+// El error Cannot find global value 'Promise' en la configuración de jsconfig.json generalmente ocurre debido a una configuración incorrecta o faltante del entorno en el que se ejecuta tu código. Esto puede deberse a la falta de configuraciones adecuadas para ES6 o un entorno que soporte Promise.
+// "target": "es6" especifica que el código debe ser compilado para ES6.
+// "lib": ["es6", "dom"] asegura que las bibliotecas de ES6 y DOM estén disponibles, proporcionando el valor global Promise.
+// "module": "esnext" y "moduleResolution": "node" aseguran que el módulo y la resolución del módulo sean compatibles con el entorno de Node.js.
