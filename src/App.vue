@@ -4,6 +4,7 @@
   import VIf from './components/VIf.vue'
   import VFor from './components/VFor.vue'
   import EventoClick from './components/EventoClick.vue'
+  import ReactividadContador from './components/ReactividadContador.vue'
 </script>
 
 <template>
@@ -14,6 +15,8 @@
       <li><a href="#estado">Estado</a></li>
       <li><a href="#lista-de-colores">Lista de Colores</a></li>
       <li><a href="#lista-de-frutas">Lista de Frutas</a></li>
+      <li><a href="#eventoclick">Evento click</a></li>
+      <li><a href="#reactividadcontador">Reactividad contador</a></li>
     </ul>
   </nav>
 
@@ -26,6 +29,8 @@
   <VFor/>
 
   <EventoClick/>
+
+  <ReactividadContador/>
 
 </template>
 
