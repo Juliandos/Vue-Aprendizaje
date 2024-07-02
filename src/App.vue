@@ -1,17 +1,62 @@
 <script setup>
-  import HolaMundo from './components/HolaMundo.vue'
-  import VBind from './components/VBind.vue'
-  import VIf from './components/VIf.vue'
-  import VFor from './components/VFor.vue'
-  import EventoClick from './components/EventoClick.vue'
-  import ReactividadContador from './components/ReactividadContador.vue'
+  // import VueRouter from 'vue-router'
+  import { ref, computed } from 'vue'
+  import HolaMundo from './components/Aprendizaje/HolaMundo.vue'
+  import VBind from './components/Aprendizaje/VBind.vue'
+  import VIf from './components/Aprendizaje/VIf.vue'
+  import VFor from './components/Aprendizaje/VFor.vue'
+  import EventoClick from './components/Aprendizaje/EventoClick.vue'
+  import ReactividadContador from './components/Aprendizaje/ReactividadContador.vue'
+  import Tags from './components/Tags/InputTag.vue'
+  import DragDrop from './components/DragDrop/Todo.vue'
+  import Propina from './components/Propina/TipView.vue'
+  import Menu from './components/Menu/Menu.vue'
+  // import Reader from './components/Reader/RSSReader.vue'
+
+  const routes = {
+  '/': HolaMundo,
+  '/colores': VBind,
+  '/estado': VIf,
+  '/lista-de-colores': VFor,
+  '/eventoclick': EventoClick,
+  '/reactividad': ReactividadContador,
+  '/tags': Tags,
+  '/dragdrop': DragDrop,
+  '/propina': Propina,
+  '/menu': Menu,
+  // '/reader': Reader
+
+}
+
+const currentPath = ref(window.location.hash)
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash
+})
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/'] 
+})
 </script>
 
 <template>
-  <nav>
+
+  <a href="#/">Home</a> |
+  <a href="#/colores">Colores</a> |
+  <a href="#/estado">Estado</a> |
+  <a href="#/lista-de-colores">Lista Colores</a> |
+  <a href="#/eventoclick">Evento Click</a> |
+  <a href="#/reactividad">Reactividad</a> |
+  <a href="#/tags">Tags</a> |
+  <a href="#/dragdrop">DragDrop</a> |
+  <a href="#/propina">Propina</a> |
+  <a href="#/menu">Menu</a> 
+  <!-- <a href="#/reader">Reader</a>  -->
+  <component :is="currentView" />
+  <!-- <nav>
     <ul>
-      <li><a href="#hola-mundo">Hola Mundo</a></li>
-      <li><a href="#colores">Colores</a></li>
+      <li><a href="/">Hola Mundo</a></li>
+      <li><a href="/colores">Colores</a></li>
       <li><a href="#estado">Estado</a></li>
       <li><a href="#lista-de-colores">Lista de Colores</a></li>
       <li><a href="#lista-de-frutas">Lista de Frutas</a></li>
@@ -19,6 +64,8 @@
       <li><a href="#reactividadcontador">Reactividad contador</a></li>
     </ul>
   </nav>
+
+  <component :is="currentView" />
 
   <HolaMundo/>
 
@@ -30,7 +77,7 @@
 
   <EventoClick/>
 
-  <ReactividadContador/>
+  <ReactividadContador/> -->
 
 </template>
 
