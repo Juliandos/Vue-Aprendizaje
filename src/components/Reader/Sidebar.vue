@@ -13,7 +13,7 @@ function handleClick(source) {
 <template>
   <div class="sidebar">
     <div v-for="(source, index) in store.sources" :key="index">
-      <a href="#" @click="() => handleClick(source)">{{ source.name }}</a>
+      <a href="#" @click.prevent="() => handleClick(source)">{{ source.name }}</a>
     </div>
   </div>
 </template>

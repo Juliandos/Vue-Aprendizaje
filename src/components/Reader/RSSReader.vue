@@ -6,7 +6,7 @@ import Header from "./Header.vue";
 
 <template>
   <div class="main-container">
-    <!-- <Header/> -->
+    <Header/>
     <Sidebar/>
     <Posts/>
   </div>

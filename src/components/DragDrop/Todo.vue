@@ -34,6 +34,11 @@ function handleNewItem(text, board) {
 }
 
 function createNewBoard() {
+
+  // if (event) {
+  //   event.preventDefault();
+  // }
+
   const name = prompt("Name of board");
   if (name) {
     const board = {
@@ -51,7 +56,7 @@ function createNewBoard() {
   <div class="main">
     <nav>
       <ul>
-        <li><a href="#" @click="createNewBoard">Create list</a></li>
+        <li><a href="#" @click.prevent="createNewBoard">Create list</a></li>
       </ul>
     </nav>
 

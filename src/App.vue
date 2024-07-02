@@ -11,7 +11,7 @@
   import DragDrop from './components/DragDrop/Todo.vue'
   import Propina from './components/Propina/TipView.vue'
   import Menu from './components/Menu/Menu.vue'
-  // import Reader from './components/Reader/RSSReader.vue'
+  import Reader from './components/Reader/RSSReader.vue'
 
   const routes = {
   '/': HolaMundo,
@@ -24,7 +24,7 @@
   '/dragdrop': DragDrop,
   '/propina': Propina,
   '/menu': Menu,
-  // '/reader': Reader
+  '/reader': Reader
 
 }
 
@@ -50,34 +50,10 @@ const currentView = computed(() => {
   <a href="#/tags">Tags</a> |
   <a href="#/dragdrop">DragDrop</a> |
   <a href="#/propina">Propina</a> |
-  <a href="#/menu">Menu</a> 
-  <!-- <a href="#/reader">Reader</a>  -->
+  <a href="#/menu">Menu</a> |
+  <a href="#/reader">Reader</a> 
   <component :is="currentView" />
-  <!-- <nav>
-    <ul>
-      <li><a href="/">Hola Mundo</a></li>
-      <li><a href="/colores">Colores</a></li>
-      <li><a href="#estado">Estado</a></li>
-      <li><a href="#lista-de-colores">Lista de Colores</a></li>
-      <li><a href="#lista-de-frutas">Lista de Frutas</a></li>
-      <li><a href="#eventoclick">Evento click</a></li>
-      <li><a href="#reactividadcontador">Reactividad contador</a></li>
-    </ul>
-  </nav>
-
-  <component :is="currentView" />
-
-  <HolaMundo/>
-
-  <VBind/>
-
-  <VIf/>
-
-  <VFor/>
-
-  <EventoClick/>
-
-  <ReactividadContador/> -->
+  
 
 </template>
 
